@@ -1,29 +1,30 @@
-// Insertion sort in Java
-
-import java.util.Arrays;
-
-class InsertionSort {
-
-  void insertionSort(int array[]) {
-    int size = array.length;
-
-    for (int step = 1; step < size; step++) {
-      int key = array[step];
-      int j = step - 1;
-
-      while (j >= 0 && key < array[j]) {
-        array[j + 1] = array[j];
-        --j;
-      }
-      array[j + 1] = key;
-    }
-  }
-
-    public static void main(String args[]) {
-    int[] data = { 9, 5, 1, 4, 3 };
-    InsertionSort is = new InsertionSort();
-    is.insertionSort(data);
-    System.out.println("Sorted Array in Ascending Order: ");
-    System.out.println(Arrays.toString(data));
-  }
-}
+public class InsertionSortExample {  
+    public static void insertionSort(int array[]) {  
+        int n = array.length;  
+        for (int j = 1; j < n; j++) {  
+            int key = array[j];  
+            int i = j-1;  
+            while ( (i > -1) && ( array [i] > key ) ) {  
+                array [i+1] = array [i];  
+                i--;  
+            }  
+            array[i+1] = key;  
+        }  
+    }  
+       
+    public static void main(String a[]){    
+        int[] arr1 = {9,14,3,2,43,11,58,22};    
+        System.out.println("Before Insertion Sort");    
+        for(int i:arr1){    
+            System.out.print(i+" ");    
+        }    
+        System.out.println();    
+            
+        insertionSort(arr1);//sorting array using insertion sort    
+           
+        System.out.println("After Insertion Sort");    
+        for(int i:arr1){    
+            System.out.print(i+" ");    
+        }    
+    }    
+}    
